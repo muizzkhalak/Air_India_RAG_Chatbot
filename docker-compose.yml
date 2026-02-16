@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  air-india-chatbot:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      # AWS Credentials (can be set via .env file or environment)
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION:-eu-north-1}
+      - AWS_DEFAULT_OUTPUT=${AWS_DEFAULT_OUTPUT:-json}
+    volumes:
+      # Mount data directory to persist PDFs (optional)
+      - ./data:/app/data:ro
+      # Mount .env file if it exists
+      - ./.env:/app/.env:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
