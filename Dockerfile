@@ -4,13 +4,6 @@ FROM python:3.11-slim
 # Set working directory in container
 WORKDIR /app
 
-# Install system dependencies
-# RUN apt-get update && apt-get install -y \
-#     build-essential \
-#     curl \
-#     software-properties-common \
-#     && rm -rf /var/lib/apt/lists/*
-
 # Copy requirements file
 COPY requirements.txt .
 
