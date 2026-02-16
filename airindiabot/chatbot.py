@@ -1,5 +1,4 @@
-from .vector_store import DataCollator
-from .llm import LLMClient
+from .modules import DataCollator, LLMClient
 from pathlib import Path
 import shutil
 
