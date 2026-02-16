@@ -1,0 +1,9 @@
+langchain-community
+boto3
+langchain-text-splitters
+langchain
+tiktoken
+langchain-chroma
+streamlit
+pypdf
+python-dotenv
