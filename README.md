@@ -2,6 +2,8 @@
 
 A Streamlit-based chatbot for Air India documentation using AWS Bedrock and ChromaDB.
 
+![alt text](image.png)
+
 ## Prerequisites
 
 - Docker and Docker Compose installed
