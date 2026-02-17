@@ -56,6 +56,12 @@ A Streamlit-based chatbot for Air India documentation using AWS Bedrock and Chro
 - **Vector Store:** ChromaDB data is persisted in the `vector_store` directory
 - **Port:** Application runs on port 8501
 
+## Models
+
+The application uses the following models from AWS Bedrock
+- **Embedding Model:** Titan Text Embeddings V2 --> `amazon.titan-embed-text-v2:0`
+- **Generation Model:** Nova Pro --> `eu.amazon.nova-pro-v1:0`
+
 ## Development
 
 To run locally without Docker:
